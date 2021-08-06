@@ -30,7 +30,7 @@ export class EventEmitter {
     if (!listenerSet) {
       return;
     }
-    listenerSet.forEach(listener => {
+    listenerSet.forEach((listener) => {
       listener.call(this);
     });
   }
@@ -46,7 +46,7 @@ export class EventEmitter {
     if (!listenerSet) {
       return;
     }
-    listenerSet.forEach(ownListener => {
+    listenerSet.forEach((ownListener) => {
       if (ownListener === listener) {
         listenerSet.delete(listener);
       }

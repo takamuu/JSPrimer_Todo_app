@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 /* eslint-disable import/first */
@@ -65,7 +66,15 @@
 // // ------------------------------------------------------------------
 
 // console.log('index.js: loaded');
+
 import { App } from './src/App.js';
 
 const app = new App();
-app.mount();
+// ページのロードが完了したときのイベント
+window.addEventListener('load', () => {
+  app.mount();
+});
+// ページがアンロードされたときのイベント
+window.addEventListener('unload', () => {
+  app.unmount();
+});

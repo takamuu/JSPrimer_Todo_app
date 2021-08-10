@@ -49,7 +49,7 @@ export class App {
         const deleteButtonElement = todoItemElement.querySelector('.delete');
         deleteButtonElement.addEventListener('click', () => {
           this.todoListModel.deleteTodo({
-            id: item.id
+            id: item.id,
           });
         });
         todoListElement.appendChild(todoItemElement);
